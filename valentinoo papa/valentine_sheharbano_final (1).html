@@ -1,0 +1,1526 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Princess Sheharbano 👑💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated gradient background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff1493 0%, #764ba2 30%, #667eea 60%, #f093fb 100%);
+            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Floating hearts background */
+        .hearts-background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 25px;
+            animation: float 10s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-40px) rotate(20deg); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Sparkle animation */
+        @keyframes sparkle {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            50% { 
+                transform: scale(1.3) rotate(25deg);
+                opacity: 0.7;
+            }
+        }
+
+        /* Main container */
+        .story-container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Page sections */
+        .page {
+            min-height: 100vh;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .page.visible {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .page.active {
+            display: flex;
+            animation: fadeInPage 0.8s ease forwards;
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Page 1 - Intro */
+        .intro-page {
+            text-align: center;
+        }
+
+        .intro-page h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 40px;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+            animation: fadeInDown 1.5s ease;
+            letter-spacing: 2px;
+        }
+
+        .intro-page .warning {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-bottom: 50px;
+            border: 5px solid white;
+            position: relative;
+            animation: pulse 3s infinite;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                box-shadow: 0 20px 60px rgba(118, 75, 162, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 22px 65px rgba(118, 75, 162, 0.4);
+                transform: scale(1.01);
+            }
+        }
+
+        .intro-page .warning::before {
+            content: '💕';
+            position: absolute;
+            top: -30px;
+            left: 30px;
+            font-size: 3.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        .intro-page .warning::after {
+            content: '💕';
+            position: absolute;
+            top: -30px;
+            right: 30px;
+            font-size: 3.5rem;
+            animation: bounce 2s infinite 0.5s;
+        }
+
+        .intro-page .warning p {
+            font-size: 2rem;
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .intro-page .warning .emoji {
+            font-size: 4rem;
+            animation: bounce 1.5s infinite;
+        }
+
+        .continue-btn {
+            background: linear-gradient(135deg, #ff1493 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 25px 60px;
+            font-size: 1.6rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+            transition: all 0.4s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .continue-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.7);
+        }
+
+        /* Next button for slides */
+        .next-btn {
+            background: linear-gradient(135deg, #ff1493 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.4rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.4);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .next-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .next-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .next-btn:hover {
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 20, 147, 0.6);
+        }
+
+        /* Story pages */
+        .story-page {
+            text-align: center;
+            width: 100%;
+        }
+
+        .story-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px;
+            border-radius: 35px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+            border: 4px solid transparent;
+            background-clip: padding-box;
+            backdrop-filter: blur(10px);
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(135deg, #ff1493, #764ba2, #667eea, #f093fb, #ff1493);
+            border-radius: 35px;
+            z-index: -1;
+            animation: rotate 8s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .story-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #ff1493, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            line-height: 1.4;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .story-card h2::after {
+            content: '💖';
+            display: block;
+            font-size: 2.5rem;
+            margin-top: 20px;
+            -webkit-text-fill-color: initial;
+        }
+
+        .story-card p {
+            font-size: 1.7rem;
+            color: #333;
+            line-height: 2;
+            font-weight: 400;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+        }
+
+        /* Photo pages */
+        .photo-page {
+            text-align: center;
+            width: 100%;
+        }
+
+        .photo-container {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 25px 80px rgba(255, 20, 147, 0.4);
+            max-width: 650px;
+            margin: 0 auto;
+            transform: rotate(-2deg);
+            transition: all 0.6s ease;
+            position: relative;
+            border: 5px solid white;
+            outline: 3px solid #ff1493;
+            animation: photoFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes photoFloat {
+            0%, 100% {
+                transform: rotate(-2deg) translateY(0px);
+            }
+            50% {
+                transform: rotate(-2deg) translateY(-5px);
+            }
+        }
+
+        .photo-container::before {
+            content: '✨';
+            position: absolute;
+            top: -25px;
+            left: -25px;
+            font-size: 3rem;
+            animation: sparkle 3s infinite;
+        }
+
+        .photo-container::after {
+            content: '💕';
+            position: absolute;
+            bottom: -25px;
+            right: -25px;
+            font-size: 3rem;
+            animation: sparkle 3s infinite 1.5s;
+        }
+
+        .photo-container:hover {
+            transform: rotate(0deg) scale(1.08);
+            box-shadow: 0 30px 100px rgba(255, 20, 147, 0.6);
+            animation-play-state: paused;
+        }
+
+        .photo-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            background: #f5f5f5;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.05);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-style: italic;
+            padding: 40px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .photo-caption {
+            font-size: 1.6rem;
+            color: #ff1493;
+            font-style: italic;
+            line-height: 1.8;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Timeline section */
+        .timeline-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #ff1493, #764ba2, #667eea, #f093fb);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(118, 75, 162, 0.3);
+            position: relative;
+            animation: fadeIn 1s ease;
+        }
+
+        .timeline-content::before {
+            content: '💕';
+            position: absolute;
+            top: 50%;
+            font-size: 2rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -40px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -40px;
+        }
+
+        .timeline-date {
+            color: #ff1493;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-text {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Memory Gallery */
+        .memory-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .memory-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            aspect-ratio: 1;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(118, 75, 162, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        .memory-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(118, 75, 162, 0.5);
+        }
+
+        .memory-frame {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-style: italic;
+        }
+
+        /* Eyes special section */
+        .eyes-section {
+            text-align: center;
+        }
+
+        .eyes-container {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(118, 75, 162, 0.4);
+            max-width: 700px;
+            margin: 0 auto;
+            border: 5px solid white;
+            outline: 3px solid #764ba2;
+        }
+
+        .eyes-frame {
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 1;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 20px 60px rgba(118, 75, 162, 0.5);
+        }
+
+        .eyes-caption {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #ff1493;
+            font-style: italic;
+            line-height: 2;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 15px;
+        }
+
+        /* Spotify section */
+        .spotify-section {
+            text-align: center;
+        }
+
+        .spotify-container {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(118, 75, 162, 0.4);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .spotify-placeholder {
+            background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+            color: white;
+            padding: 80px;
+            border-radius: 20px;
+            font-size: 1.3rem;
+        }
+
+        /* Reasons section */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .reason-card {
+            background: linear-gradient(135deg, #ff1493 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.4);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.08), transparent);
+            transform: rotate(45deg);
+            animation: shine 4s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .reason-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(255, 20, 147, 0.6);
+        }
+
+        .reason-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .reason-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Letter section */
+        .letter-container {
+            background: #fffef7;
+            padding: 70px;
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(255, 20, 147, 0.4);
+            border: 4px solid #ff1493;
+            position: relative;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 35px,
+                    rgba(255, 20, 147, 0.05) 35px,
+                    rgba(255, 20, 147, 0.05) 37px
+                );
+        }
+
+        .letter-container::before {
+            content: '💌';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 5rem;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .letter-text {
+            font-size: 1.4rem;
+            line-height: 2.5;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .letter-text p {
+            margin-bottom: 30px;
+        }
+
+        .signature {
+            text-align: right;
+            font-size: 2rem;
+            color: #764ba2;
+            margin-top: 50px;
+            font-style: italic;
+        }
+
+        /* Question page */
+        .question-box {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 80px;
+            border-radius: 40px;
+            box-shadow: 0 30px 80px rgba(255, 20, 147, 0.5);
+            max-width: 700px;
+            margin: 0 auto;
+            border: 5px solid white;
+            position: relative;
+            backdrop-filter: blur(10px);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 20, 147, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(118, 75, 162, 0.08) 0%, transparent 50%);
+        }
+
+        .question-box::before {
+            content: '👑';
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 5rem;
+            animation: bounce 2s infinite;
+            filter: drop-shadow(0 8px 20px rgba(255, 20, 147, 0.6));
+        }
+
+        .question-box::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, #ff1493, #764ba2, #667eea, #f093fb);
+            border-radius: 40px;
+            z-index: -1;
+            opacity: 0.7;
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                opacity: 0.6;
+                filter: blur(0px);
+            }
+            50% {
+                opacity: 1;
+                filter: blur(5px);
+            }
+        }
+
+        .question-box h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            background: linear-gradient(135deg, #ff1493, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+        }
+
+        .final-message {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ff1493, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 50px 0;
+            font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            height: 250px;
+            margin: 50px auto;
+        }
+
+        .btn {
+            padding: 30px 60px;
+            font-size: 1.7rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        #yesBtn {
+            background: linear-gradient(135deg, #ff1493 0%, #764ba2 100%);
+            color: white;
+            z-index: 10;
+            position: static;
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
+        }
+
+        #noBtn {
+            background: white;
+            color: #ff1493;
+            position: static;
+            border: 3px solid #ff1493;
+        }
+
+        /* Thank you page */
+        .thankyou-card {
+            background: linear-gradient(135deg, #ff1493 0%, #764ba2 100%);
+            color: white;
+            padding: 100px;
+            border-radius: 40px;
+            box-shadow: 0 30px 90px rgba(0,0,0,0.4);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .thankyou-card h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            margin-bottom: 40px;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .thankyou-card p {
+            font-size: 2rem;
+            line-height: 2;
+            margin-bottom: 30px;
+        }
+
+        .infinity {
+            font-size: 6rem;
+            margin-top: 40px;
+        }
+
+        /* Section headers */
+        .section-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #ff1493, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2.5rem;
+            animation: bounce 2s infinite;
+            z-index: 100;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .intro-page h1 {
+                font-size: 2.8rem;
+            }
+            
+            .story-card {
+                padding: 40px;
+            }
+            
+            .story-card h2 {
+                font-size: 2rem;
+            }
+            
+            .story-card p {
+                font-size: 1.3rem;
+            }
+            
+            .letter-container {
+                padding: 40px;
+            }
+            
+            .question-box {
+                padding: 50px;
+            }
+            
+            .question-box h1 {
+                font-size: 2.8rem;
+            }
+            
+            .final-message {
+                font-size: 2.2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                padding-left: 50px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <div class="hearts-background" id="heartsContainer"></div>
+
+    <div class="story-container">
+        <!-- Page 1: Intro -->
+        <div class="page page-1 visible">
+            <div class="intro-page">
+                <h1>Hey Sheharbano 👑</h1>
+                <div class="warning">
+                    <p>Continue only if you're alone</p>
+                    <div class="emoji">🙈💕</div>
+                </div>
+                <button class="continue-btn" onclick="startStory()">I'm Alone, Let's Go ❤️</button>
+            </div>
+        </div>
+
+        <!-- Page 2: Distance Message -->
+        <div class="page page-2">
+            <div class="story-page">
+                <div class="story-card">
+                    <h2>I know we're together but in a distance...</h2>
+                    <p>So I want you to smile through every slide and make you happy in all ways I can 💕✨</p>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Page 3: CS Hottie Intro -->
+        <div class="page page-3">
+            <div class="story-page">
+                <div class="story-card">
+                    <h2>Since your boy is a CS hottie 👨‍💻✨</h2>
+                    <p>I saw this somewhere and thought why not make her feel special in a different way this time heheh 😄</p>
+                    <p style="margin-top: 20px;">So starting from the days where we weren't together... I have been in love with you since then 💖</p>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Page 4: First Photo -->
+        <div class="page page-4">
+            <div class="photo-page">
+                <div class="photo-container">
+                    <div class="photo-frame">
+                        <img src="photos/photo1.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="photo-caption">
+                        Since days like this, where we were immature, unaware of the world... 🌸
+                    </div>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Page 5: Second Photo -->
+        <div class="page page-5">
+            <div class="photo-page">
+                <div class="photo-container">
+                    <div class="photo-frame">
+                        <img src="photos/photo2.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="photo-caption">
+                        Not knowing what the world was, not even knowing each other properly... 🌙
+                    </div>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Page 6: Third Photo -->
+        <div class="page page-6">
+            <div class="photo-page">
+                <div class="photo-container">
+                    <div class="photo-frame">
+                        <img src="photos/photo3.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="photo-caption">
+                        We still fell in love... 💕💫
+                    </div>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Page 7: Fourth Photo -->
+        <div class="page page-7">
+            <div class="photo-page">
+                <div class="photo-container">
+                    <div class="photo-frame">
+                        <img src="photos/photo4.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="photo-caption">
+                        Throughout all the difficulties we've been through... 🌊
+                    </div>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Page 8: Fifth Photo -->
+        <div class="page page-8">
+            <div class="photo-page">
+                <div class="photo-container">
+                    <div class="photo-frame">
+                        <img src="photos/photo5.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="photo-caption">
+                        We still chose to be together... ❤️✨
+                    </div>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Page 9: Promise -->
+        <div class="page page-9">
+            <div class="story-page">
+                <div class="story-card">
+                    <h2>I feel so lucky DAILY... 🍀</h2>
+                    <p>Because of the gift Allah Miyan has given me. I promise to be with you throughout your entire life and love you like I do today.</p>
+                    <p style="margin-top: 30px; font-size: 1.5rem;">Doesn't matter if we have 50 kids and you look like...</p>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Page 10: Meme -->
+        <div class="page page-10">
+            <div class="photo-page">
+                <div class="story-card">
+                    <h2>THIS! 👇😂</h2>
+                    <div style="max-width: 500px; margin: 30px auto;">
+                        <div class="photo-frame">
+                            <img src="photos/meme.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                    <p style="font-size: 1.8rem; color: #764ba2; margin-top: 30px;">I'll still be obsessed with you! 😍💕</p>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Page 11: Letter with Photo -->
+        <div class="page page-11">
+            <div class="story-page" style="max-width: 900px;">
+                <h2 class="section-header">A Handwritten Letter For You 💌</h2>
+                <div class="letter-container" style="max-width: 700px; padding: 40px;">
+                    <div class="photo-frame" style="aspect-ratio: auto; height: auto; min-height: 500px;">
+                        <img src="photos/letter.jpg.jpeg" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="photo-caption" style="margin-top: 30px;">
+                        This is a  small letter for you from your Janu 💕
+                    </div>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="page page-timeline">
+            <div class="story-page">
+                <h2 class="section-header">Our Journey Together 💫</h2>
+                <div class="timeline-section">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">📅 [5th june] - First Message</div>
+                                <div class="timeline-text">The day everything started... when I first said hi and you changed my life forever.</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">📅 [11th july] - First Video Call</div>
+                                <div class="timeline-text">Seeing your smile for the first time made my heart skip a beat.</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">📅 [12th march] - "I Love You"</div>
+                                <div class="timeline-text">The moment I knew I wanted to spend forever with you.</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">📅 [1st september] - First Fight</div>
+                                <div class="timeline-text">We proved that our love is stronger than any argument.</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">📅 [12th december] - OUR FIRST MAKEOUT SESH</div>
+                                <div class="timeline-text"> Every day with you is a memory I treasure.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Memory Gallery -->
+        <div class="page page-memories">
+            <div class="story-page">
+                <h2 class="section-header">Our Beautiful Memories 📸✨</h2>
+                <div class="memory-gallery">
+                    <div class="memory-item">
+                        <div class="memory-frame">
+                        <img src="photos/memory1.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-frame">
+                        <img src="photos/memory2.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-frame">
+                        <img src="photos/memory3.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-frame">
+                        <img src="photos/memory4.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-frame">
+                        <img src="photos/memory5.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-frame">
+                        <img src="photos/memory6.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-frame">
+                        <img src="photos/memory7.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-frame">
+                        <img src="photos/memory8.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-frame">
+                        <img src="photos/memory10.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-frame">
+                        <img src="photos/memory11.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 40px; color: white; font-size: 1.2rem; font-style: italic;">
+                    &lt;img src="photoX.jpg" style="width: 100%; height: 100%; object-fit: cover;"&gt;
+                </p>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Eyes Special Section -->
+        <div class="page page-eyes">
+            <div class="story-page">
+                <div class="eyes-section">
+                    <div class="eyes-container">
+                        <div class="eyes-frame">
+                            <img src="photos/eyes.jpg.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="eyes-caption">
+                            "Teri surat se hai alam mein baharoun ko sabaat<br>
+                            Teri ankhon ke siwa duniya mein rakha kya hai" 💫✨
+                        </div>
+                    </div>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        
+
+        <!-- 10 Reasons -->
+        <div class="page page-reasons">
+            <div class="story-page">
+                <h2 class="section-header">10 Reasons Why I Love You 💝</h2>
+                <div class="reasons-grid">
+                    <div class="reason-card">
+                        <div class="reason-number">1</div>
+                        <div class="reason-text">Your beautiful smile that brightens my darkest days ☀️</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">2</div>
+                        <div class="reason-text">The way you understand me without words 💭</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">3</div>
+                        <div class="reason-text">Your kindness and the way you care for everyone 🌸</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">4</div>
+                        <div class="reason-text">How you make me laugh even when we're miles apart 😂</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">5</div>
+                        <div class="reason-text">Your strength and how you inspire me every day 💪</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">6</div>
+                        <div class="reason-text">The way my heart skips when I see your name 💓</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">7</div>
+                        <div class="reason-text">Your beautiful eyes that I get lost in 👁️✨</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">8</div>
+                        <div class="reason-text">How you make distance feel like nothing 🌍</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">9</div>
+                        <div class="reason-text">Every little thing about you that makes you... YOU 🌟</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">∞</div>
+                        <div class="reason-text">Because the reasons are endless and always growing 💕</div>
+                    </div>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Page 13: Try Saying No -->
+        <div class="page page-13">
+            <div class="story-page">
+                <div class="story-card">
+                    <h2>Try once saying NO 😏</h2>
+                    <p style="font-size: 1.8rem;">I suggest you... hehehehehehe mwahhh 😘💋💕</p>
+                </div>
+                <button class="next-btn" onclick="nextPage()">Next 💕</button>
+            </div>
+        </div>
+
+        <!-- Page 12: The Big Question -->
+        <div class="page page-12">
+            <div class="story-page">
+                <div class="question-box">
+                    <h1>Last but not the least, Hanu...</h1>
+                    
+                    <div class="final-message">
+                        Will You Be My Valentine? 💕
+                    </div>
+                    
+                    <div class="button-container">
+                        <button class="btn" id="yesBtn">YES! ❤️</button>
+                        <button class="btn" id="noBtn">No</button>
+                    </div>
+                    
+                    <!-- Decorative floating elements -->
+                    <div style="position: absolute; top: 20%; left: 5%; font-size: 2rem; animation: floatHeart 3s ease-in-out infinite; opacity: 0.6;">💕</div>
+                    <div style="position: absolute; top: 30%; right: 8%; font-size: 2.5rem; animation: floatHeart 4s ease-in-out infinite 0.5s; opacity: 0.6;">💖</div>
+                    <div style="position: absolute; bottom: 25%; left: 8%; font-size: 2rem; animation: floatHeart 3.5s ease-in-out infinite 1s; opacity: 0.6;">💗</div>
+                    <div style="position: absolute; bottom: 35%; right: 5%; font-size: 2.2rem; animation: floatHeart 4.5s ease-in-out infinite 1.5s; opacity: 0.6;">✨</div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+        @keyframes floatHeart {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-15px) rotate(10deg) scale(1.1);
+                opacity: 0.9;
+            }
+        }
+        </style>
+
+        <!-- Final Page: I LOVE YOU -->
+        <div class="page page-final">
+            <div class="story-page">
+                <div class="thankyou-card">
+                    <h1>I LOVE YOU ❤️</h1>
+                    <p>Hanu, thank you for choosing me daily, every single day and every single moment.</p>
+                    <p>Thank you for choosing me as your Valentine.</p>
+                    <p>I know the distance sucks eww, but still nothing can affect the amount of love I carry for you.</p>
+                    <p>Sorry for everything from my side that ever hurt you jaani.</p>
+                    <div class="infinity">∞</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator">↓</div>
+
+    <script>
+        let currentPageIndex = 0;
+        const totalPages = document.querySelectorAll('.page').length;
+
+        // Create floating hearts
+        function createHearts() {
+            const container = document.getElementById('heartsContainer');
+            const heartSymbols = ['❤️', '💕', '💖', '💗', '💝', '🌹', '✨', '💫'];
+            
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                container.appendChild(heart);
+            }
+        }
+
+        // Start the story
+        function startStory() {
+            const pages = document.querySelectorAll('.page');
+            pages[0].classList.remove('visible');
+            currentPageIndex = 1;
+            showCurrentPage();
+        }
+
+        // Show current page
+        function showCurrentPage() {
+            const pages = document.querySelectorAll('.page');
+            
+            // Hide all pages
+            pages.forEach(page => {
+                page.classList.remove('active');
+                page.classList.remove('visible');
+            });
+            
+            // Show current page
+            if (currentPageIndex < pages.length) {
+                pages[currentPageIndex].classList.add('active');
+                pages[currentPageIndex].classList.add('visible');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // Hide scroll indicator
+                document.getElementById('scrollIndicator').style.display = 'none';
+            }
+        }
+
+        // Next page function
+        function nextPage() {
+            currentPageIndex++;
+            if (currentPageIndex < totalPages) {
+                showCurrentPage();
+            }
+        }
+
+        // Dodging No button - Ultra aggressive version
+        let noClickCount = 0;
+        
+        function moveButton(event) {
+            if (event) {
+                event.preventDefault();
+            }
+            
+            const noBtn = document.getElementById('noBtn');
+            const yesBtn = document.getElementById('yesBtn');
+            
+            noClickCount++;
+            
+            // Make Yes button MUCH bigger each time
+            const currentSize = 1 + (noClickCount * 0.35);
+            yesBtn.style.transform = `scale(${currentSize})`;
+            yesBtn.style.transition = 'transform 0.3s ease';
+            
+            // Move No button to random position within viewport
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            
+            const btnWidth = noBtn.offsetWidth;
+            const btnHeight = noBtn.offsetHeight;
+            
+            const randomX = Math.random() * (viewportWidth - btnWidth - 40) + 20;
+            const randomY = Math.random() * (viewportHeight - btnHeight - 40) + 20;
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+            noBtn.style.transition = 'none';
+            
+            // Change button text
+            const noTexts = [
+                'No', 
+                'Are you sure? 🥺', 
+                'Really hanu? 💔', 
+                'Think again! 😢', 
+                'Please baby? 🙏', 
+                'Pretty please? 🥺', 
+                "You can't resist! 😘", 
+                "Come on Princess! 👑", 
+                "Don't break my heart 💔",
+                "Hanuuuu pleaseee 😭",
+                "I'm begging! 🙏",
+                "You love me right? ❤️",
+                "SAY YES! 💕",
+                "Try saying yes 😏",
+                "JUST SAY YES! 😭❤️"
+            ];
+            
+            if (noClickCount < noTexts.length) {
+                noBtn.textContent = noTexts[noClickCount];
+            } else {
+                noBtn.textContent = "PLEASEEEE! 😭💕";
+            }
+            
+            // Make it even harder to click
+            if (noClickCount > 3) {
+                noBtn.style.padding = '20px 40px';
+            }
+            if (noClickCount > 6) {
+                noBtn.style.fontSize = '1.3rem';
+            }
+        }
+
+        // Handle Yes button
+        function handleYes() {
+            const currentSection = document.querySelector('.page-12');
+            const finalSection = document.querySelector('.page-final');
+            
+            currentSection.style.display = 'none';
+            finalSection.classList.add('visible');
+            createConfetti();
+            
+            setTimeout(() => {
+                finalSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }, 100);
+        }
+
+        // Confetti effect
+        function createConfetti() {
+            const colors = ['#667eea', '#764ba2', '#f093fb', '#ffd93d', '#ff6bcb'];
+            
+            for (let i = 0; i < 200; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.width = '15px';
+                    confetti.style.height = '15px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.left = Math.random() * window.innerWidth + 'px';
+                    confetti.style.top = '-20px';
+                    confetti.style.zIndex = '9999';
+                    confetti.style.borderRadius = '50%';
+                    confetti.style.pointerEvents = 'none';
+                    
+                    document.body.appendChild(confetti);
+                    
+                    const fallDuration = Math.random() * 3 + 2;
+                    const drift = (Math.random() - 0.5) * 400;
+                    
+                    confetti.animate([
+                        { 
+                            transform: 'translateY(0) translateX(0) rotate(0deg)', 
+                            opacity: 1 
+                        },
+                        { 
+                            transform: `translateY(${window.innerHeight + 20}px) translateX(${drift}px) rotate(720deg)`, 
+                            opacity: 0 
+                        }
+                    ], {
+                        duration: fallDuration * 1000,
+                        easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                    });
+                    
+                    setTimeout(() => confetti.remove(), fallDuration * 1000);
+                }, i * 15);
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const noBtn = document.getElementById('noBtn');
+            const yesBtn = document.getElementById('yesBtn');
+            
+            if (noBtn) {
+                noBtn.addEventListener('mouseover', moveButton);
+                noBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    moveButton(e);
+                });
+                noBtn.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    moveButton(e);
+                });
+            }
+            
+            if (yesBtn) {
+                yesBtn.addEventListener('click', handleYes);
+            }
+        });
+
+        // Initialize
+        createHearts();
+    </script>
+</body>
+</html>
